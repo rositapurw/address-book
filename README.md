@@ -1,3 +1,4 @@
 # address-book
 
-![image](https://github.com/user-attachments/assets/4ca53562-394b-4c26-b594-1ecb2245ba6e)
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/923d2a82-cfb7-4a3d-8d1e-03c1c1951b70">
+
