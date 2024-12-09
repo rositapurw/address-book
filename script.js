@@ -20,5 +20,10 @@ const contacts = [
 ];
 
 function getContacts() {
-  console.log(`${contacts.name} is ${contacts.phone} and ${contacts.email}`);
+  console.log(contacts);
+  contacts.forEach((contact) => {
+    console.log(`${contact.name}: ${contact.phone}`);
+  });
 }
+
+getContacts();
