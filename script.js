@@ -1,12 +1,24 @@
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
+const contacts = [
+  {
+    id: 1,
+    name: "Tamara",
+    phone: "1234567890",
+    email: "tamara@gmail.com",
+  },
+  {
+    id: 2,
+    name: "Awan",
+    phone: "0987654321",
+    email: "awan@gmail.com",
+  },
+  {
+    id: 3,
+    name: "Rosita",
+    phone: "0987654321",
+    email: "rosita@gmail.com",
+  },
+];
 
-    if (name && phone && email) {
-        const table = document.getElementById("contactTable").getElementsByTagName("tbody")[0];
-        const row = table.insertRow();
-
-        const nameCell = row.insertCell(0);
-        const phoneCell = row.insertCell(1);
-        const emailCell = row.insertCell(2);
-        const actionsCell = row.insertCell(3);
+function getContacts() {
+  console.log(`${contacts.name} is ${contacts.phone} and ${contacts.email}`);
+}
