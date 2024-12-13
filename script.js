@@ -1,18 +1,18 @@
 const contacts = [
   {
-    id: 146,
+    id: 1273,
     name: "Tamara",
     phone: "1234567890",
     email: "tamara@gmail.com",
   },
   {
-    id: 285,
+    id: 2293,
     name: "Awan",
     phone: "0987654321",
     email: "awan@gmail.com",
   },
   {
-    id: 334,
+    id: 3234,
     name: "Rosita",
     phone: "0987654321",
     email: "rosita@gmail.com",
@@ -27,7 +27,7 @@ function getContacts() {
 }
 
 function generateId(params) {
-  return Math.floor(Math.random() * 1000);
+  return Math.floor(Math.random() * 9000 + 1000);
 }
 
 function addContact() {
@@ -52,4 +52,4 @@ function searchContact(keyword) {
 getContacts();
 addContact();
 
-searchContact("Rosita");
+searchContact("tamara");
