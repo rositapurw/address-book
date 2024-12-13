@@ -1,21 +1,21 @@
 const contacts = [
   {
     id: 1273,
-    name: "Tamara",
-    phone: "1234567890",
-    email: "tamara@gmail.com",
+    name: "Tamara Bleszynski",
+    phone: "+6281234567893",
+    email: "tamarableszynski@gmail.com",
   },
   {
     id: 2293,
-    name: "Awan",
-    phone: "0987654321",
-    email: "awan@gmail.com",
+    name: "Awan Putra",
+    phone: "+6281272349203",
+    email: "awanputra@gmail.com",
   },
   {
     id: 3234,
-    name: "Rosita",
-    phone: "0987654321",
-    email: "rosita@gmail.com",
+    name: "Rosita Purwaningsih",
+    phone: "+6285725315029",
+    email: "rositapurwaningsih@gmail.com",
   },
 ];
 
@@ -33,9 +33,9 @@ function generateId(params) {
 function addContact() {
   const newContact = {
     id: generateId(),
-    name: "Saka",
-    phone: "0987654321",
-    email: "saka@gmail.com",
+    name: "Saka Maulana",
+    phone: "+6281276567893",
+    email: "sakamaulana@gmail.com",
   };
 
   const result = contacts.push(newContact);
