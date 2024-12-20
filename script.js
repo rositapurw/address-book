@@ -1,55 +1,109 @@
-const contacts = [
+let dataContacts = [
   {
-    id: 1273,
+    id: 1,
     name: "Tamara Bleszynski",
     phone: "+6281234567893",
     email: "tamarableszynski@gmail.com",
+    birthdate: "1974-12-25",
   },
   {
-    id: 2293,
+    id: 2,
     name: "Awan Putra",
     phone: "+6281272349203",
     email: "awanputra@gmail.com",
+    birthdate: "1997-08-17",
   },
   {
-    id: 3234,
+    id: 3,
     name: "Rosita Purwaningsih",
     phone: "+6285725315029",
     email: "rositapurwaningsih@gmail.com",
+    birthdate: "1998-02-22",
   },
 ];
 
-function getContacts() {
-  console.log(contacts);
+function renderContacts(contacts) {
   contacts.forEach((contact) => {
-    console.log(`${contact.name}: ${contact.phone}`);
+    console.log(
+      `${contact.name}: ${contact.phone}: ${contact.email}: ${contact.birthdate}`
+    );
   });
 }
 
-function generateId(params) {
-  return Math.floor(Math.random() * 9000 + 1000);
+function searchContact(contacts, searchTerm) {
+  const searchedContact = contacts.filter((contact) => {
+    return contact.name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
+  renderContacts(searchedContact);
 }
 
-function addContact() {
+function generateId() {
+  return contacts[contacts.length - 1].id + 1;
+}
+
+function addContact(contacts, newContactInput) {
   const newContact = {
-    id: generateId(),
-    name: "Saka Maulana",
-    phone: "+6281276567893",
-    email: "sakamaulana@gmail.com",
+    id: generateId(contacts),
+    name: newContactInput.name,
+    phone: newContactInput.phone,
+    email: newContactInput.email,
+    birthdate: newContactInput.birthdate,
   };
 
-  const result = contacts.push(newContact);
+  const newContacts = [...contacts, newContact];
+
+  dataContacts = newContacts;
+
+  renderContacts(newContacts);
 }
 
-function searchContact(keyword) {
-  const searchContact = contacts.filter((contact) => {
-    return contact.name.toLowerCase().includes(keyword.toLowerCase());
+function deleteContact(contacts, contactId) {
+  const filteredContacts = contacts.filter((contact) => {
+    return contact.id !== contactId;
   });
 
-  console.log(searchContact);
+  dataContacts = filteredContacts;
+
+  renderContacts(dataContacts);
 }
 
-getContacts();
-addContact();
+function updatedContact(contacts, contactId, updatedContactInput) {
+  const originalContact = contacts.find((contact) => {
+    return contact.id === contactId;
+  });
 
-searchContact("tamara");
+  const updatedContact = {
+    id: contactId,
+    name: updatedContactInput.name || originalContact.name,
+    phone: updatedContactInput.phone || originalContact.phone,
+    email: updatedContactInput.email || originalContact.email,
+    birthdate: updatedContactInput.birthdate || originalContact.birthdate,
+  };
+
+  const updatedContacts = contacts.map((contact) => {
+    if (contact.id === contactId) {
+      return updatedContact;
+    }
+
+    return contact;
+  });
+
+  dataContacts = updatedContacts;
+
+  renderContacts(dataContacts);
+}
+
+renderContacts(dataContacts);
+searchContact(dataContacts, "wan");
+
+// addContact(dataContacts, {
+//   name: "Saka Maulana",
+//   phone: "+6281234567893",
+//   email: "sakamaulana@gmail.com",
+//   birthdate: "1999-03-23",
+// });
+
+updatedContact(dataContacts, 1, {
+  name: "Harry Potter",
+});
