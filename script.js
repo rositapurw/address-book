@@ -22,11 +22,19 @@ let dataContacts = [
   },
 ];
 
+const contactsListElement = document.getElementById("contacts-list");
+
 function renderContacts(contacts) {
   contacts.forEach((contact) => {
-    console.log(
-      `${contact.name}: ${contact.phone}: ${contact.email}: ${contact.birthdate}`
-    );
+    const contactLiElement = document.createElement("li");
+    contactLiElement.innerHTML = `
+    <h1> ${contact.name} </h1>
+    <p> ${contact.phone} </p>
+    <p> ${contact.email} </p>
+    <p> ${contact.birthdate} </p>
+    `;
+
+    contactsListElement.appendChild(contactLiElement);
   });
 }
 
@@ -94,8 +102,8 @@ function updatedContact(contacts, contactId, updatedContactInput) {
   renderContacts(dataContacts);
 }
 
-renderContacts(dataContacts);
-searchContact(dataContacts, "wan");
+// renderContacts(dataContacts);
+// searchContact(dataContacts, "wan");
 
 // addContact(dataContacts, {
 //   name: "Saka Maulana",
