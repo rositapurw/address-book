@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Book</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Address Book</h1>
+
+    <form id="contactForm">
+      <div class="form-container">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter name" required />
+
+        <label for="phone">Phone:</label>
+        <input
+          type="text"
+          id="phone"
+          placeholder="Enter phone number"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter email" required />
+
+        <input type="submit" value="Add Contact" />
+      </div>
+    </form>
+
+    <table id="contactTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <main>
+      <ul id="contacts-list"></ul>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
